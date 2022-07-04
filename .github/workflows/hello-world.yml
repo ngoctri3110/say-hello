@@ -1,7 +1,13 @@
 name: hello world
 on:
     push:
-        branches: [main]
+        paths:
+            - "!readme.md"
+            - "**js"
+        branches:
+            - "main"
+            - "release/**"
+            - "!dev/**"
 jobs:
     say-hello:
         runs-on: ubuntu-latest
